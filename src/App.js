@@ -1,16 +1,18 @@
-import './App.css';
-import {useState, useEffect} from "react";
+import { useState, useEffect } from "react";
+import "./App.css";
+import SocialCard from "./SocialCard";
+
 
 function App() {
-
+  const [allUsers, setAllUsers] = useState([]);
   const [users, setUsers] = useState([]);
 
-  useEffect (() => {
+  useEffect(() => {
     (async () => {
       let userData;
       try{
         const response = await fetch('https://randomuser.me/api/?results=10');
-        const userData = await response.json().results;
+        const userData = (await response.json()).results;
       } catch (error) {
         console.log(error);
         userData = [];
@@ -22,7 +24,7 @@ function App() {
   return (
     <div className="App">
       {users.map((user, index) =>(
-        <SocialCard userData = {user} key={index}/>
+        <SocialCard userData={user} key={index}/>
       ))}
     </div>
   );
