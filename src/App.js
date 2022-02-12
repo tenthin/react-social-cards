@@ -21,7 +21,9 @@ function App() {
   }, []);
   return (
     <div className="App">
-      Hello
+      {users.map((user, index) =>(
+        <SocialCard userData = {user} key={index}/>
+      ))}
     </div>
   );
 }
