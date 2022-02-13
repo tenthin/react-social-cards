@@ -1,3 +1,4 @@
+import "./SocialCard.css"
 const SocialCard = ({ userData }) => {
     return (
         <div className="card">
