@@ -25,9 +25,14 @@ function App() {
   const filterCards = event => {
     const value = event.target.value.toLowerCase();
     const filteredUsers = allUsers.filter(
-      user => (`${user.name.first} ${user.name.last}`)
-    )
-  }
+      user => (`${user.name.first} ${user.name.last}`
+      .toLowerCase()
+      .includes(value)
+      )
+    );
+
+    setUsers(filteredUsers)
+  };
 
 
   return (
