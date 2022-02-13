@@ -1,3 +1,5 @@
+import "./Location.css"
+
 const Location = ({location}) => {
     return (
         <div className="location">
