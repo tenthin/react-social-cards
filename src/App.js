@@ -5,6 +5,7 @@ import SocialCard from "./SocialCard";
 function App() {
 
   const [users, setUsers] = useState([]);
+  const [allUsers, setAllUsers] = useState([]);
   useEffect (() => {
     (async () => {
       let userData;
@@ -16,12 +17,16 @@ function App() {
         userData = [];
       }
 
+      setAllUsers(userData);
       setUsers(userData);
     })();
   }, []);
 
   const filterCards = event => {
-    console.log(event)
+    const value = event.target.value.toLowerCase();
+    const filteredUsers = allUsers.filter(
+      user => (`${user.name.first} ${user.name.last}`)
+    )
   }
 
 
