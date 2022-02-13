@@ -9,6 +9,7 @@ const SocialCard = ({ userData }) => {
             <div className="card__body">
                 <Location location={userData.location}/>
                 <PhoneNumber type="Home" number={userData.phone}/>
+                <PhoneNumber type="Mobile" number={userData.cell}/>
                 <div className="card__image"><img src={userData.picture.medium}/></div>
             </div>
         </div>
