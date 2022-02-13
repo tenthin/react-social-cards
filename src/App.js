@@ -19,9 +19,16 @@ function App() {
       setUsers(userData);
     })();
   }, []);
+
+  const filterCards = event => {
+    console.log(event)
+  }
+
+
   return (
     <div className="App">
       <h1>Social Cards</h1>
+      <input className="search-box" placeholder="Search..." onInput={filterCards}/>
       <div className="cards-container">
 
 
